@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="Crestview — market analysis, demo trading signals, risk tools, and trading bots in one workspace.">
+  <title>Crestview — Trade with a clearer view</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+  <script src="theme.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <button class="mobile-nav-backdrop" id="mobile-nav-backdrop" type="button" aria-label="Close navigation menu"></button>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-label="Crestview home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 23.5 12 9l5.1 9.1L21 12l7 11.5H4Z"/><path d="M10 23.5h12"/></svg></span>
+        <span>crestview<span class="brand-period">.</span></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="index.html"><span class="nav-icon">◫</span>Overview</a>
+        <a class="nav-link" href="markets.html"><span class="nav-icon">↗</span>Markets<span class="nav-count">12</span></a>
+        <a class="nav-link" href="signals.html"><span class="nav-icon">⌁</span>Signals<span class="nav-dot"></span></a>
+        <a class="nav-link" href="bots.html"><span class="nav-icon">⌘</span>Trading bots</a>
+        <a class="nav-link" href="calculator.html"><span class="nav-icon">▦</span>Risk calculator</a>
+        <a class="nav-link" href="calendar.html"><span class="nav-icon">◷</span>Economic calendar</a>
+        <a class="nav-link" href="settings.html"><span class="nav-icon">⚙</span>Settings</a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="workspace-label">YOUR WATCHLIST <button class="watch-add" type="button" aria-label="Add market">+</button></div>
+      <div class="side-watchlist">
+        <a class="watch-item selected" href="market-eur-usd.html"><span class="currency-icon blue">€</span><span class="watch-copy"><strong>EUR/USD</strong><small>Euro / US Dollar</small></span><span class="watch-price">1.0842</span></a>
+        <a class="watch-item" href="market-gbp-usd.html"><span class="currency-icon purple">£</span><span class="watch-copy"><strong>GBP/USD</strong><small>British Pound / US Dollar</small></span><span class="watch-price">1.2718</span></a>
+        <a class="watch-item" href="market-xau-usd.html"><span class="currency-icon gold">Au</span><span class="watch-copy"><strong>XAU/USD</strong><small>Gold / US Dollar</small></span><span class="watch-price">2,341.6</span></a>
+        <a class="watch-item" href="market-btc-usd.html"><span class="currency-icon orange">₿</span><span class="watch-copy"><strong>BTC/USD</strong><small>Bitcoin / US Dollar</small></span><span class="watch-price">67,420</span></a>
+      </div>
+      <div class="sidebar-spacer"></div>
+      <div class="plan-card">
+        <div class="plan-top"><span class="plan-spark">✦</span><span>CRESTVIEW PRO</span></div>
+        <p>Get the full picture.<br>Trade with an edge.</p>
+        <button type="button" class="plan-button" data-modal="premium">Explore plans <span>↗</span></button>
+      </div>
+      <button class="profile-button" type="button" data-modal="account">
+        <span class="avatar">JD</span><span class="profile-copy"><strong>Jordan Davis</strong><small>Demo account</small></span><span class="profile-menu">···</span>
+      </button>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <button class="mobile-menu" id="menu-toggle" type="button" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong>Overview</strong></div>
+        <div class="topbar-actions">
+          <div class="market-status"><span class="demo-pulse"></span> Demo market data</div>
+          <button class="icon-button notification-button" type="button" aria-label="Notifications" data-modal="notifications">♧<span class="notification-badge"></span></button>
+          <button class="top-avatar" type="button" aria-label="Account" data-modal="account">JD</button>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <section class="page-heading">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> SUNDAY, NOVEMBER 1, 2026</div>
+            <h1>Good morning, Jordan <span class="wave">✳</span></h1>
+            <p class="subtitle">Your market overview is ready. Here’s what’s moving today.</p>
+          </div>
+          <button class="outline-button" type="button" id="refresh-button"><span class="refresh-icon">↻</span> Refresh data</button>
+        </section>
+
+        <section class="summary-grid" aria-label="Portfolio summary">
+          <article class="summary-card balance-card">
+            <div class="card-heading"><span>DEMO ACCOUNT BALANCE</span><button type="button" class="more-button" aria-label="Balance info" title="Simulated account balance">···</button></div>
+            <div class="balance-line"><strong id="account-balance">$24,680<span>.50</span></strong><span class="change-pill positive">↗ 2.4%</span></div>
+            <div class="balance-note">+$580.20 <span>this month</span></div>
+            <div class="sparkline balance-spark" aria-hidden="true"><svg viewBox="0 0 260 40" preserveAspectRatio="none"><path d="M0 31 C14 29 18 20 30 24 S49 32 61 19 S80 22 92 16 S111 19 123 12 S140 18 152 10 S172 15 184 8 S205 16 217 7 S237 12 249 4 S255 5 260 7" /></svg></div>
+          </article>
+          <article class="summary-card">
+            <div class="card-heading"><span>OPEN POSITIONS</span><span class="card-icon green-icon">↗</span></div>
+            <div class="metric-value">04</div>
+            <div class="metric-footer"><span class="mini-tag">3 profitable</span><span class="metric-muted">1.8 lots total</span></div>
+          </article>
+          <article class="summary-card">
+            <div class="card-heading"><span>DAY’S P&amp;L</span><span class="card-icon green-icon">⌁</span></div>
+            <div class="metric-value positive-text">+$284<span class="decimal">.60</span></div>
+            <div class="metric-footer"><span class="change-text">↗ 1.16%</span><span class="metric-muted">vs. yesterday</span></div>
+          </article>
+          <article class="summary-card">
+            <div class="card-heading"><span>WIN RATE</span><span class="card-icon violet-icon">◎</span></div>
+            <div class="metric-value">68<span class="decimal">.4%</span></div>
+            <div class="metric-footer"><span class="mini-tag violet-tag">+4.2%</span><span class="metric-muted">last 30 days</span></div>
+          </article>
+        </section>
+
+        <section class="market-layout" aria-label="Market analysis">
+          <article class="panel chart-panel">
+            <div class="panel-heading chart-heading">
+              <div class="instrument">
+                <span class="currency-icon blue large-icon" id="chart-icon">€</span>
+                <div><div class="instrument-name"><h2 id="chart-symbol">EUR/USD</h2><span class="instrument-badge">Forex</span></div><div class="instrument-description">Euro / US Dollar</div></div>
+              </div>
+              <div class="chart-tools">
+                <div class="timeframes" role="group" aria-label="Chart timeframe">
+                  <button type="button" data-period="1H">1H</button><button type="button" class="selected" data-period="4H">4H</button><button type="button" data-period="1D">1D</button><button type="button" data-period="1W">1W</button>
+                </div>
+                <a class="chart-link" href="https://www.tradingview.com/chart/?symbol=OANDA%3AEURUSD" target="_blank" rel="noopener noreferrer" id="tradingview-link" aria-label="Open this chart on TradingView">↗ <span>TradingView</span></a>
+              </div>
+            </div>
+            <div class="quote-row"><strong id="chart-price">1.0842</strong><span class="quote-change">+0.0028 (0.26%)</span><span class="quote-label">Today</span><span class="chart-updated"><span class="live-pulse"></span> DEMO DATA</span></div>
+            <div class="chart-wrap"><div class="chart-y-labels"><span>1.0880</span><span>1.0860</span><span>1.0840</span><span>1.0820</span><span>1.0800</span></div><canvas id="price-chart" aria-label="Illustrative EUR USD price chart"></canvas><div class="chart-tooltip" id="chart-tooltip"></div><div class="chart-x-labels"><span>06:00</span><span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span></div></div>
+            <div class="chart-footer"><span><i class="legend-dot"></i> EUR/USD</span><span>Price action is simulated for demonstration</span><button class="expand-chart" id="expand-chart" type="button" title="Expand chart" aria-label="Expand chart">⛶</button></div>
+          </article>
+          <aside class="panel sentiment-panel">
+            <div class="panel-heading"><div><div class="section-kicker">MARKET PULSE</div><h2>EUR/USD sentiment</h2></div><span class="live-label demo-label"><span class="demo-pulse"></span> DEMO</span></div>
+            <div class="sentiment-score"><div class="score-number">72<span>/100</span></div><span class="sentiment-state">Bullish</span><p>Buyers are in control</p></div>
+            <div class="sentiment-meter"><span></span></div><div class="meter-labels"><span>Bearish</span><span>Neutral</span><span>Bullish</span></div>
+            <div class="sentiment-divider"></div>
+            <div class="signal-strength"><div><span class="section-kicker">SIGNAL STRENGTH</span><strong>Strong</strong></div><div class="strength-bars"><i></i><i></i><i></i><i></i><i class="muted"></i></div></div>
+            <div class="sentiment-stat"><span>Buy / Sell ratio</span><strong>68% <span class="green-dot"></span> / 32%</strong></div>
+            <div class="sentiment-stat"><span>Volatility</span><strong class="volatility">Moderate</strong></div>
+            <button type="button" class="text-link" data-modal="analysis">View full analysis <span>→</span></button>
+          </aside>
+        </section>
+
+        <section class="lower-grid">
+          <article class="panel markets-panel" id="markets">
+            <div class="panel-heading"><div><div class="section-kicker">ON YOUR RADAR</div><h2>Popular markets</h2></div><button class="text-link compact-link" type="button" data-scroll="markets">View all <span>→</span></button></div>
+            <div class="market-table-wrap"><table class="market-table"><thead><tr><th>INSTRUMENT</th><th>PRICE</th><th>24H CHANGE</th><th>7D TREND</th><th></th></tr></thead><tbody>
+              <tr data-market="EUR/USD"><td><span class="table-instrument"><span class="currency-icon blue">€</span><span><strong>EUR/USD</strong><small>Euro / US Dollar</small></span></span></td><td class="mono">1.0842</td><td class="positive-text">+0.26%</td><td><span class="table-spark green-spark">╱╲╱╱╲╱</span></td><td><button class="row-arrow" type="button" aria-label="View EUR/USD">↗</button></td></tr>
+              <tr data-market="GBP/USD"><td><span class="table-instrument"><span class="currency-icon purple">£</span><span><strong>GBP/USD</strong><small>British Pound / US Dollar</small></span></span></td><td class="mono">1.2718</td><td class="positive-text">+0.14%</td><td><span class="table-spark green-spark">╱╱╲╱╱╲</span></td><td><button class="row-arrow" type="button" aria-label="View GBP/USD">↗</button></td></tr>
+              <tr data-market="XAU/USD"><td><span class="table-instrument"><span class="currency-icon gold">Au</span><span><strong>XAU/USD</strong><small>Gold / US Dollar</small></span></span></td><td class="mono">2,341.60</td><td class="negative-text">−0.38%</td><td><span class="table-spark red-spark">╲╱╲╲╱╲</span></td><td><button class="row-arrow" type="button" aria-label="View XAU/USD">↗</button></td></tr>
+              <tr data-market="BTC/USD"><td><span class="table-instrument"><span class="currency-icon orange">₿</span><span><strong>BTC/USD</strong><small>Bitcoin / US Dollar</small></span></span></td><td class="mono">67,420.00</td><td class="positive-text">+2.81%</td><td><span class="table-spark green-spark">╱╲╱╱╱╲</span></td><td><button class="row-arrow" type="button" aria-label="View BTC/USD">↗</button></td></tr>
+            </tbody></table></div>
+            <div class="data-disclaimer">Illustrative prices only · Not connected to a live broker</div>
+          </article>
+
+          <article class="panel signals-panel" id="signals">
+            <div class="panel-heading"><div><div class="section-kicker">IDEAS, NOT ADVICE</div><h2>Today’s signals</h2></div><span class="signals-count">3</span></div>
+            <div class="signal-list">
+              <div class="signal-item"><span class="signal-direction buy">BUY</span><div class="signal-copy"><strong>EUR/USD</strong><small>Momentum breakout · 4H</small></div><span class="signal-confidence">82%<small>confidence</small></span></div>
+              <div class="signal-item"><span class="signal-direction sell">SELL</span><div class="signal-copy"><strong>GBP/JPY</strong><small>Resistance rejection · 1H</small></div><span class="signal-confidence">74%<small>confidence</small></span></div>
+              <div class="signal-item locked-signal"><span class="signal-direction buy">BUY</span><div class="signal-copy"><strong>XAU/USD <span class="lock-icon">⌑</span></strong><small>Trend continuation · 4H</small></div><button type="button" class="unlock-button" data-modal="premium">Unlock</button></div>
+            </div>
+            <div class="signals-bottom"><span>Signals are simulated</span><button class="text-link" type="button" data-modal="premium">See all signals <span>→</span></button></div>
+          </article>
+        </section>
+
+        <section class="tools-grid">
+          <article class="panel calculator-panel" id="calculator">
+            <div class="panel-heading"><div><div class="section-kicker">TRADE SMARTER</div><h2>Position size calculator</h2></div><span class="tool-icon">▦</span></div>
+            <p class="panel-description">Know your risk before you enter a trade.</p>
+            <div class="calculator-fields">
+              <label>Account balance <span class="input-wrap"><span>$</span><input id="calc-balance" type="number" value="24680" min="0" step="100" aria-label="Account balance in dollars"></span></label>
+              <label>Risk per trade <span class="input-wrap"><input id="calc-risk" type="number" value="1" min="0.1" max="100" step="0.1" aria-label="Risk percentage"><span>%</span></span></label>
+              <label>Stop loss <span class="input-wrap"><input id="calc-stop" type="number" value="25" min="1" step="1" aria-label="Stop loss in pips"><span>pips</span></span></label>
+              <label>Pair <span class="select-wrap"><select id="calc-pair" aria-label="Currency pair"><option value="10">EUR/USD</option><option value="10">GBP/USD</option><option value="9.2">EUR/GBP</option><option value="1">USD/JPY</option></select><span>⌄</span></span></label>
+            </div>
+            <div class="calc-result"><div><span>RECOMMENDED POSITION SIZE</span><strong id="lot-result">0.99 <small>lots</small></strong></div><div class="risk-result"><span>MAX RISK</span><strong id="risk-result">$246.80</strong></div></div>
+            <div class="calc-note">Estimate only. Confirm contract specifications with your broker.</div>
+          </article>
+          <article class="panel events-panel" id="events">
+            <div class="panel-heading"><div><div class="section-kicker">DON’T MISS A MOVE</div><h2>Upcoming events</h2></div><button type="button" class="calendar-date">NOV 01 <span>⌄</span></button></div>
+            <div class="event-list">
+              <div class="event-item"><div class="event-time"><strong>09:00</strong><small>UTC</small></div><span class="impact-dot high-impact"></span><div class="event-copy"><strong>US Manufacturing PMI</strong><small>USD <span>·</span> Manufacturing</small></div><span class="event-impact high-text">High impact</span></div>
+              <div class="event-item"><div class="event-time"><strong>13:30</strong><small>UTC</small></div><span class="impact-dot medium-impact"></span><div class="event-copy"><strong>Initial Jobless Claims</strong><small>USD <span>·</span> Employment</small></div><span class="event-impact medium-text">Medium</span></div>
+              <div class="event-item"><div class="event-time"><strong>15:00</strong><small>UTC</small></div><span class="impact-dot high-impact"></span><div class="event-copy"><strong>ISM Services PMI</strong><small>USD <span>·</span> Services</small></div><span class="event-impact high-text">High impact</span></div>
+            </div>
+            <div class="event-disclaimer">Event schedule is for demonstration purposes.</div>
+          </article>
+        </section>
+
+        <section class="panel bots-panel" id="bots">
+          <div class="panel-heading"><div><div class="section-kicker">AUTOMATE YOUR STRATEGY</div><h2>Trading bots</h2><p class="panel-description">Explore tools to help execute your strategy. Demo mode only.</p></div><button type="button" class="outline-button small-outline" data-modal="bots">Browse marketplace <span>↗</span></button></div>
+          <div class="bot-cards">
+            <article class="bot-card"><div class="bot-card-top"><span class="bot-avatar bot-blue">✳</span><span class="bot-status running"><i></i> RUNNING</span></div><h3>Trend Rider</h3><p>Follows momentum across major forex pairs.</p><div class="bot-stats"><span>DEMO P&amp;L<strong class="positive-text">+$142.80</strong></span><span>MARKETS<strong>3 pairs</strong></span></div><div class="bot-card-footer"><span class="bot-tag">FOREX · MOMENTUM</span><button type="button" class="bot-toggle on" aria-label="Pause Trend Rider bot" aria-pressed="true"><i></i></button></div></article>
+            <article class="bot-card"><div class="bot-card-top"><span class="bot-avatar bot-violet">◈</span><span class="bot-status paused"><i></i> PAUSED</span></div><h3>Gold Sentinel</h3><p>Tracks volatility and levels in the gold market.</p><div class="bot-stats"><span>DEMO P&amp;L<strong class="positive-text">+$68.20</strong></span><span>MARKETS<strong>1 pair</strong></span></div><div class="bot-card-footer"><span class="bot-tag">METALS · SWING</span><button type="button" class="bot-toggle" aria-label="Start Gold Sentinel bot" aria-pressed="false"><i></i></button></div></article>
+            <button type="button" class="bot-add-card" data-modal="bots"><span>＋</span><strong>Find your next edge</strong><small>Explore bots built for your strategy</small><span class="bot-add-link">Browse marketplace ↗</span></button>
+          </div>
+        </section>
+        <footer class="page-footer"><span>© 2026 Crestview</span><span>Trading involves risk. Nothing here is financial advice.</span><span class="footer-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></span><span class="demo-footer"><i></i> Demo environment</span></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="refresh-overlay" id="refresh-overlay" aria-hidden="true"><div class="refresh-dialog" role="status" aria-live="polite"><span class="refresh-spinner">↻</span><strong>Refreshing market data</strong><span class="refresh-message">Updating your demo market view…</span><div class="progress-track"><span id="refresh-progress"></span></div><span class="progress-percent" id="refresh-percent">0%</span></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Close dialog">×</button>
+      <span class="modal-symbol" id="modal-symbol">✦</span><div class="section-kicker" id="modal-kicker">CRESTVIEW</div><h2 id="modal-title">Get more from your market view</h2><p id="modal-copy">Unlock advanced analysis, premium signals, and more tools for your trading workflow.</p>
+      <div class="modal-actions"><button type="button" class="primary-button" id="modal-primary">Explore plans <span>→</span></button><button type="button" class="modal-secondary" id="modal-secondary">Maybe later</button></div>
+      <small class="modal-footnote">Demo experience · No payments or trades are processed</small>
+    </section>
+  </div>
+</body>
+</html>
