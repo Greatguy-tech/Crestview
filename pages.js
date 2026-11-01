@@ -54,6 +54,18 @@ document.querySelectorAll("[data-marketplace-action]").forEach((button) => {
   button.addEventListener("click", () => showPageToast("Strategy preview only — no broker connection or trades."));
 });
 
+document.querySelectorAll(".community-join").forEach((button) => {
+  button.addEventListener("click", () => {
+    showPageToast(`${button.dataset.tier} membership preview selected. No payment or enrollment was made.`);
+  });
+});
+
+document.querySelectorAll(".activity-action").forEach((button) => {
+  button.addEventListener("click", () => {
+    showPageToast(`${button.dataset.activity} preview — community features are not connected in this demo.`);
+  });
+});
+
 const marketSearch = document.getElementById("market-search");
 let selectedMarketFilter = "All";
 function filterMarkets() {

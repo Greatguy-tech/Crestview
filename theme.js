@@ -21,6 +21,27 @@
   applyPreferences();
 
   document.addEventListener("DOMContentLoaded", () => {
+    const navigation = document.querySelector(".side-nav");
+    if (navigation) {
+      const currentPage = location.pathname.split(/[\\/]/).pop() || "index.html";
+      const pageLinks = [
+        { href: "positions.html", icon: "◉", label: "Live positions" },
+        { href: "community.html", icon: "◎", label: "Community" }
+      ];
+      const settingsLink = navigation.querySelector('a[href="settings.html"]');
+      pageLinks.forEach(({ href, icon, label }) => {
+        let link = navigation.querySelector(`a[href="${href}"]`);
+        if (!link) {
+          link = document.createElement("a");
+          link.className = "nav-link";
+          link.href = href;
+          link.innerHTML = `<span class="nav-icon">${icon}</span>${label}`;
+        }
+        link.classList.toggle("active", currentPage === href);
+        navigation.insertBefore(link, settingsLink || null);
+      });
+    }
+
     const themeControl = document.getElementById("setting-theme");
     const densityControl = document.getElementById("setting-density");
     const accentControl = document.getElementById("setting-accent");
