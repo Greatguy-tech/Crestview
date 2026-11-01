@@ -482,5 +482,28 @@ html[data-theme="light"] .community-disclaimer p { color: #786f5d; }
   .activity-action { margin-left: 38px; }
   .positions-workspace { padding: 13px; }
   .overview-positions-panel > .panel-heading .text-link { font-size: 8px; white-space: nowrap; }
-  .position-table-wrap { margin-right: -1px; }
+  .position-table-wrap { margin-right: 0; overflow: visible; }
+  .position-table, .positions-workspace .position-table { display: block; width: 100%; min-width: 0; }
+  .position-table thead { display: none; }
+  .position-table tbody { display: grid; gap: 9px; }
+  .position-table tbody tr { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 12px; min-width: 0; padding: 9px 11px; border: 1px solid var(--border); border-radius: 7px; background: var(--panel); }
+  .position-table tbody td { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; min-width: 0; min-height: 43px; height: auto; padding: 7px 0; border-bottom: 1px solid rgba(126,145,168,.12); font-size: 9px; }
+  .position-table tbody td::before { color: var(--muted); font-family: "Oceanwide", "DM Sans", sans-serif; font-size: 7px; font-weight: 500; letter-spacing: .4px; }
+  .position-table tbody td:nth-child(1) { grid-column: 1 / -1; min-height: 43px; }
+  .position-table tbody td:nth-child(1)::before { content: none; }
+  .position-table tbody td:nth-child(2)::before { content: "SIDE"; }
+  .position-table tbody td:nth-child(3)::before { content: "SIZE"; }
+  .position-table tbody td:nth-child(4)::before { content: "ENTRY"; }
+  .position-table tbody td:nth-child(5)::before { content: "MARK"; }
+  .position-table tbody td:nth-child(6)::before { content: "STOP LOSS"; }
+  .position-table tbody td:nth-child(7)::before { content: "UNREALIZED P&L"; }
+  .positions-workspace .position-table tbody td:nth-child(7) { border-bottom: 0; }
+  .position-table tbody td:nth-child(8) { grid-column: 1 / -1; align-items: flex-end; min-height: 32px; border-bottom: 0; }
+  .position-table tfoot { display: block; margin-top: 9px; }
+  .position-table tfoot tr { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 7px 1px; }
+  .position-table tfoot td { width: auto; height: auto; padding: 5px 0; border: 0; font-size: 7px; }
+  .position-table tfoot td:first-child { flex: 1; padding-left: 0; }
+  .position-table tfoot td:last-child { padding-right: 0; }
+  .position-table tfoot .demo-data-note { display: block; margin: 3px 0 0; }
+  .position-table tfoot .position-total { font-size: 10px; white-space: nowrap; }
 }
