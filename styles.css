@@ -8,11 +8,11 @@
 
 :root {
   color-scheme: dark;
-  --page: #08111f;
-  --sidebar: #0a1422;
-  --panel: #0e1929;
-  --panel-raised: #111f31;
-  --border: #1b2a3d;
+  --page: #080808;
+  --sidebar: #0d0d0d;
+  --panel: #141414;
+  --panel-raised: #1b1b1b;
+  --border: #292929;
   --text: #f0f4fa;
   --muted: #8290a4;
   --subtle: #5e6d80;
@@ -37,7 +37,7 @@ a { color: inherit; text-decoration: none; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #6c8fff; outline-offset: 3px; }
 
 .app-shell { min-height: 100vh; }
-.sidebar { position: fixed; inset: 0 auto 0 0; z-index: 20; display: flex; flex-direction: column; width: 248px; overflow-x: hidden; overflow-y: auto; overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; padding: 27px 16px 13px; border-right: 1px solid #172437; background: var(--sidebar); }
+.sidebar { position: fixed; inset: 0 auto 0 0; z-index: 20; display: flex; flex-direction: column; width: 248px; overflow-x: hidden; overflow-y: auto; overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; padding: 27px 16px 13px; border-right: 1px solid #222; background: var(--sidebar); }
 .brand { display: flex; align-items: center; gap: 9px; width: fit-content; margin: 0 0 44px 7px; color: #f2f5fb; font-size: 21px; font-weight: 700; letter-spacing: -1.15px; }
 .brand-mark { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 8px; background: #d7edff; }
 .brand-mark svg { width: 21px; fill: #102137; stroke: #102137; stroke-width: 1.5; stroke-linejoin: round; }
@@ -81,7 +81,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .profile-menu { margin-left: auto; color: #91a0b3; font-size: 20px; letter-spacing: 1px; }
 
 .main-content { min-height: 100vh; margin-left: 248px; }
-.topbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; height: 61px; padding: 0 34px; border-bottom: 1px solid #172437; background: rgba(8,17,31,.94); backdrop-filter: blur(12px); }
+.topbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; height: 61px; padding: 0 34px; border-bottom: 1px solid #222; background: rgba(8,8,8,.94); backdrop-filter: blur(12px); }
 .breadcrumb { color: #8090a4; font-size: 11px; }
 .breadcrumb span { padding: 0 9px; color: #415168; }
 .breadcrumb strong { color: #e5eaf2; font-weight: 500; }
@@ -109,7 +109,7 @@ h1 { margin: 9px 0 6px; font-size: clamp(24px, 2.3vw, 29px); font-weight: 600; l
 .summary-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr 1fr; gap: 12px; margin-bottom: 15px; }
 .summary-card, .panel { min-width: 0; border: 1px solid var(--border); border-radius: 9px; background: var(--panel); }
 .summary-card { position: relative; overflow: hidden; min-height: 128px; padding: 15px 16px; }
-.balance-card { background: linear-gradient(115deg, #102436, #0e1929 74%); }
+.balance-card { background: linear-gradient(115deg, #171a1a, #141414 74%); }
 .card-heading { display: flex; align-items: center; justify-content: space-between; font-size: 8px; letter-spacing: .9px; }
 .more-button { padding: 0 2px; line-height: 10px; }
 .balance-line { display: flex; align-items: center; gap: 10px; margin-top: 13px; }

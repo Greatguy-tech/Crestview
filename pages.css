@@ -192,6 +192,32 @@
 .legal-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 26px; padding-top: 15px; border-top: 1px solid var(--border); color: var(--muted); font-size: 9px; }
 .legal-footer a { color: #a2b3ca; }
 
+html:not([data-theme="light"]) .topbar { background: rgba(8,8,8,.94); }
+html:not([data-theme="light"]) .nav-link:hover, html:not([data-theme="light"]) .nav-link.active { background: #1a1a1a; }
+html:not([data-theme="light"]) .nav-count { background: #242424; }
+html:not([data-theme="light"]) .watch-item:hover, html:not([data-theme="light"]) .watch-item.selected { background: #191919; }
+html:not([data-theme="light"]) .plan-card { border-color: #303030; background: radial-gradient(ellipse at 100% 0, #252525 0, #181818 52%, #111 100%); }
+html:not([data-theme="light"]) .plan-button { border-color: #3a3a3a; background: #242424; }
+html:not([data-theme="light"]) .timeframes { background: #1b1b1b; }
+html:not([data-theme="light"]) .timeframes button:hover, html:not([data-theme="light"]) .timeframes button.selected { background: #333; }
+html:not([data-theme="light"]) .market-search,
+html:not([data-theme="light"]) .filter-chip,
+html:not([data-theme="light"]) .settings-select,
+html:not([data-theme="light"]) .date-picker,
+html:not([data-theme="light"]) .calendar-step,
+html:not([data-theme="light"]) .input-wrap,
+html:not([data-theme="light"]) .select-wrap { border-color: #303030; background: #101010; }
+html:not([data-theme="light"]) .filter-chip.selected { background: color-mix(in srgb, var(--accent) 12%, #141414); }
+html:not([data-theme="light"]) .signal-card,
+html:not([data-theme="light"]) .bot-card,
+html:not([data-theme="light"]) .marketplace-card { border-color: #292929; background: #191919; }
+html:not([data-theme="light"]) .locked-overlay { background: rgba(8,8,8,.9); }
+html:not([data-theme="light"]) .calc-result,
+html:not([data-theme="light"]) .result-detail-grid > div,
+html:not([data-theme="light"]) .formula { border-color: #303030; background: #191919; }
+html:not([data-theme="light"]) .refresh-dialog { border-color: #333; background: #151515; }
+html:not([data-theme="light"]) .refresh-overlay { background: rgba(0,0,0,.8); }
+
 html[data-accent="blue"] { --accent: #7c9cff; }
 html[data-accent="violet"] { --accent: #b49bff; }
 html[data-accent="amber"] { --accent: #f0bd68; }
